@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,25 +16,63 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "S7 | Desenvolvimento de Software & Automação",
-  description: "Desenvolvemos softwares que escalam negócios e automatizam operações. Tecnologia B2B de ponta.",
-  icons: {
-    icon: "/s7-logo.jpg",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "desenvolvimento de software",
+    "inteligência artificial",
+    "automação",
+    "produtos SaaS",
+    "S7",
+    "software sob medida",
+    "agentes de IA",
+  ],
+  authors: [{ name: siteConfig.legalName }],
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
+  alternates: {
+    canonical: siteConfig.url,
   },
   openGraph: {
-    title: "S7 Software Development",
-    description: "Desenvolvemos softwares que escalam negócios e automatizam operações.",
-    url: "https://s7tech.com",
-    siteName: "S7",
-    images: [
-      {
-        url: "/s7-logo.jpg",
-        width: 800,
-        height: 600,
-      },
-    ],
-    locale: "pt_BR",
     type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  width: "device-width",
+  initialScale: 1,
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.legalName,
+  alternateName: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: siteConfig.contactEmail,
+    contactType: "customer support",
   },
 };
 
@@ -42,10 +83,19 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-base-black">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </body>
     </html>
   );
 }
