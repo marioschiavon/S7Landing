@@ -53,7 +53,14 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href={siteConfig.cta.secondary.href} variant="outline" size="md" icon={false}>
+          <Button
+            href={siteConfig.cta.secondary.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+            size="md"
+            icon={false}
+          >
             {siteConfig.cta.secondary.label}
           </Button>
         </div>
@@ -91,6 +98,8 @@ export function Navbar() {
               ))}
               <Button
                 href={siteConfig.cta.secondary.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="outline"
                 className="mt-3 w-full"
                 icon={false}

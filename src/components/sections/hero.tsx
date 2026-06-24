@@ -79,6 +79,8 @@ export function Hero() {
             </Button>
             <Button
               href={siteConfig.cta.secondary.href}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="outline"
               size="lg"
               icon={false}

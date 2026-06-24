@@ -149,6 +149,8 @@ export function Products() {
                 <div className="mt-auto pt-2">
                   <Button
                     href={siteConfig.cta.secondary.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     variant="outline"
                     size="md"
                   >

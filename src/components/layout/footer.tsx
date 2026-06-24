@@ -53,6 +53,16 @@ export function Footer() {
               <ul className="flex flex-col gap-3">
                 <li>
                   <a
+                    href={siteConfig.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-white/55 transition-colors hover:text-white"
+                  >
+                    WhatsApp
+                  </a>
+                </li>
+                <li>
+                  <a
                     href={`mailto:${siteConfig.contactEmail}`}
                     className="text-sm text-white/55 transition-colors hover:text-white"
                   >
