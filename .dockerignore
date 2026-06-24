@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.claude
+.agent
+.agents
+npm-debug.log*
+
+.vscode
+.idea
+
+*.md
+
+.env
+.env.*
