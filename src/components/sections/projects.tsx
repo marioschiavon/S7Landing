@@ -4,7 +4,7 @@ import { Stagger, StaggerItem } from "@/components/ui/reveal";
 import { BrowserFrame } from "@/components/ui/browser-frame";
 import { cn } from "@/lib/utils";
 
-function LedereiMockup() {
+function LeadereiMockup() {
   return (
     <BrowserFrame>
       <div className="flex flex-col gap-4">
@@ -108,11 +108,11 @@ function GroomerMockup() {
 
 const projects = [
   {
-    name: "Lederei",
+    name: "Leaderei",
     tag: "Plataforma Web",
     description:
       "Plataforma digital desenvolvida para atender necessidades específicas do cliente.",
-    Mockup: LedereiMockup,
+    Mockup: LeadereiMockup,
   },
   {
     name: "Groomer Genius",
