@@ -66,9 +66,9 @@ function GroomerMockup() {
 const projects = [
   {
     name: "Leaderei",
-    tag: "Plataforma Web",
+    tag: "Prospecção B2B com IA",
     description:
-      "Plataforma digital desenvolvida para atender necessidades específicas do cliente.",
+      "Plataforma multitenant que importa e qualifica leads, dispara cadências por WhatsApp e email com IA e agenda reuniões automaticamente via Cal.com.",
     Mockup: LeadereiMockup,
   },
   {
