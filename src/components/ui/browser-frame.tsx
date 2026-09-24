@@ -4,9 +4,14 @@ import { cn } from "@/lib/utils";
 interface BrowserFrameProps {
   children: ReactNode;
   className?: string;
+  contentClassName?: string;
 }
 
-export function BrowserFrame({ children, className }: BrowserFrameProps) {
+export function BrowserFrame({
+  children,
+  className,
+  contentClassName,
+}: BrowserFrameProps) {
   return (
     <div
       className={cn(
@@ -20,7 +25,7 @@ export function BrowserFrame({ children, className }: BrowserFrameProps) {
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <div className="ml-3 h-5 max-w-[55%] flex-1 rounded-full bg-white/5" />
       </div>
-      <div className="relative p-5">{children}</div>
+      <div className={cn("relative p-5", contentClassName)}>{children}</div>
     </div>
   );
 }
