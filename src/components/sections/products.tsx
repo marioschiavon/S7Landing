@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Check, Factory, MessageSquare } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -8,38 +9,14 @@ import { siteConfig } from "@/lib/site-config";
 
 function Hook7Mockup() {
   return (
-    <BrowserFrame>
-      <div className="flex flex-col gap-2.5">
-        <div className="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2">
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            <span className="font-mono text-[10px] uppercase tracking-wide text-white/50">
-              WhatsApp conectado
-            </span>
-          </div>
-          <span className="font-mono text-[10px] text-white/30">99.9%</span>
-        </div>
-
-        <div className="flex flex-col gap-2 py-1">
-          <div className="max-w-[75%] rounded-2xl rounded-bl-sm border border-white/8 bg-white/[0.04] px-3.5 py-2.5">
-            <div className="h-2 w-32 rounded-full bg-white/15" />
-          </div>
-          <div className="ml-auto max-w-[75%] rounded-2xl rounded-br-sm bg-gradient-brand px-3.5 py-2.5">
-            <div className="h-2 w-24 rounded-full bg-white/40" />
-          </div>
-          <div className="max-w-[75%] rounded-2xl rounded-bl-sm border border-white/8 bg-white/[0.04] px-3.5 py-2.5">
-            <div className="h-2 w-20 rounded-full bg-white/15" />
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 rounded-lg border border-dashed border-white/10 px-3 py-2">
-          <span className="font-mono text-[10px] uppercase tracking-wide text-accent-blue">
-            fluxo automático
-          </span>
-          <div className="h-px flex-1 bg-white/10" />
-          <Check size={12} className="text-accent-blue" />
-        </div>
-      </div>
+    <BrowserFrame contentClassName="p-0">
+      <Image
+        src="/projects/hook7.png"
+        alt="Dashboard do Hook7"
+        width={1918}
+        height={871}
+        className="h-auto w-full"
+      />
     </BrowserFrame>
   );
 }
