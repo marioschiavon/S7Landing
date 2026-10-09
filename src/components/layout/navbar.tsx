@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
+import { SocialLinks } from "@/components/ui/social-links";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 
@@ -107,6 +108,10 @@ export function Navbar() {
               >
                 {siteConfig.cta.secondary.label}
               </Button>
+              <SocialLinks
+                className="mt-5 justify-center"
+                onNavigate={() => setOpen(false)}
+              />
             </nav>
           </motion.div>
         )}

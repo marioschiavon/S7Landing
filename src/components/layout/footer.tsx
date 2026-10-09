@@ -1,5 +1,6 @@
 import { Logo } from "@/components/ui/logo";
 import { Container } from "@/components/ui/container";
+import { SocialLinks } from "@/components/ui/social-links";
 import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -25,6 +26,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <SocialLinks />
           </div>
 
           <div className="grid grid-cols-2 gap-10 sm:gap-16">

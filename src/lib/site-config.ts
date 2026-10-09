@@ -23,6 +23,12 @@ export const siteConfig = {
     { label: "Produtos", href: "#produtos" },
     { label: "Contato", href: "#contato" },
   ],
+  // TODO: substituir pelas URLs reais dos perfis
+  socials: [
+    { label: "Instagram", platform: "instagram", href: "https://www.instagram.com/s7.dev.br" },
+    { label: "LinkedIn", platform: "linkedin", href: "https://www.linkedin.com/company/s7-dev-br" },
+    { label: "Facebook", platform: "facebook", href: "https://www.facebook.com/s7.dev.br" },
+  ],
   pillars: ["Software", "IA", "Automação", "Produtos Digitais"],
   cta: {
     primary: { label: "Conheça nossos projetos", href: "#projetos" },

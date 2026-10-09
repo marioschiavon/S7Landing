@@ -69,6 +69,7 @@ const organizationJsonLd = {
   alternateName: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
+  sameAs: siteConfig.socials.map((social) => social.href),
   contactPoint: {
     "@type": "ContactPoint",
     email: siteConfig.contactEmail,
