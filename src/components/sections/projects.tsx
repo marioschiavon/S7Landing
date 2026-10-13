@@ -93,7 +93,7 @@ export function Projects() {
         <Stagger className="grid gap-6 md:grid-cols-2">
           {projects.map(({ name, tag, description, Mockup }) => (
             <StaggerItem key={name}>
-              <div className="card-surface group relative h-full overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20">
+              <div className="card-surface group relative h-full overflow-hidden rounded-3xl transition-[transform,border-color] duration-500 hover:-translate-y-2 hover:border-white/20">
                 <div className="p-6 pb-0">
                   <Mockup />
                 </div>

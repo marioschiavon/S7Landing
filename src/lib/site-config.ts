@@ -1,6 +1,10 @@
 const whatsappNumber = "5544988217535";
-const whatsappMessage = "Olá! Vim pelo site da S7 e gostaria de saber mais.";
-const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+export function whatsappLink(message: string) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+const whatsappHref = whatsappLink("Olá! Vim pelo site da S7 e gostaria de saber mais.");
 
 export const siteConfig = {
   name: "S7",
@@ -31,9 +35,12 @@ export const siteConfig = {
   ],
   pillars: ["Software", "IA", "Automação", "Produtos Digitais"],
   cta: {
-    primary: { label: "Conheça nossos projetos", href: "#projetos" },
-    secondary: { label: "Falar com a S7", href: whatsappHref },
-    final: { label: "Iniciar Projeto", href: "mailto:contato@s7.dev.br" },
+    contact: { label: "Falar com a S7", href: whatsappHref },
+    projects: { label: "Ver projetos", href: "#projetos" },
+    final: {
+      label: "Iniciar projeto",
+      href: whatsappLink("Olá! Quero iniciar um projeto com a S7."),
+    },
   },
 } as const;
 

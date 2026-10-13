@@ -22,20 +22,20 @@ type Hub = {
 };
 
 const hubs: Hub[] = [
-  { id: "software", x: 150, y: 130, label: "Software", icon: Code2 },
+  { id: "software", x: 150, y: 210, label: "Software", icon: Code2 },
   { id: "ia", x: 480, y: 730, label: "Inteligência Artificial", icon: BrainCircuit },
-  { id: "negocios", x: 1050, y: 130, label: "Negócios", icon: BarChart3 },
+  { id: "negocios", x: 1050, y: 210, label: "Negócios", icon: BarChart3 },
 ];
 
 const satellites = [
   { id: "s1", x: 90, y: 420, r: 4, parent: "software" },
-  { id: "s2", x: 320, y: 110, r: 3, parent: "software" },
+  { id: "s2", x: 320, y: 180, r: 3, parent: "software" },
   { id: "s3", x: 470, y: 640, r: 4, parent: "ia" },
   { id: "s4", x: 760, y: 610, r: 3, parent: "ia" },
   { id: "s5", x: 1100, y: 410, r: 4, parent: "negocios" },
-  { id: "s6", x: 880, y: 80, r: 3, parent: "negocios" },
-  { id: "s7", x: 40, y: 150, r: 2.5, parent: "software" },
-  { id: "s8", x: 1140, y: 130, r: 2.5, parent: "negocios" },
+  { id: "s6", x: 880, y: 160, r: 3, parent: "negocios" },
+  { id: "s7", x: 40, y: 240, r: 2.5, parent: "software" },
+  { id: "s8", x: 1140, y: 220, r: 2.5, parent: "negocios" },
 ];
 
 const hubMap = Object.fromEntries(hubs.map((h) => [h.id, h]));

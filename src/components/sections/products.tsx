@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { BrowserFrame } from "@/components/ui/browser-frame";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
+import { whatsappLink } from "@/lib/site-config";
 
 function Hook7Mockup() {
   return (
@@ -33,7 +33,7 @@ function BakeMockup() {
       <div className="grid grid-cols-3 gap-2.5">
         {columns.map((col) => (
           <div key={col.label} className="flex flex-col gap-2">
-            <span className="font-mono text-[10px] uppercase tracking-wide text-white/40">
+            <span className="font-mono text-[10px] uppercase tracking-wide text-white/55">
               {col.label}
             </span>
             {Array.from({ length: col.items }).map((_, i) => (
@@ -90,7 +90,7 @@ export function Products() {
         <div className="grid gap-6 lg:grid-cols-2">
           {products.map(({ icon: Icon, name, description, features, Mockup }, i) => (
             <Reveal key={name} delay={i * 0.1}>
-              <div className="card-surface group relative flex h-full flex-col gap-8 overflow-hidden rounded-3xl p-8 transition-all duration-500 hover:border-white/20 md:p-10">
+              <div className="card-surface group relative flex h-full flex-col gap-8 overflow-hidden rounded-3xl p-8 transition-colors duration-500 hover:border-white/20 md:p-10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-brand shadow-glow-blue">
@@ -98,7 +98,7 @@ export function Products() {
                     </div>
                     <h3 className="text-3xl font-bold text-white">{name}</h3>
                   </div>
-                  <span className="hidden rounded-full border border-white/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wide text-white/40 sm:inline-block">
+                  <span className="hidden rounded-full border border-white/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wide text-white/55 sm:inline-block">
                     Produto S7
                   </span>
                 </div>
@@ -125,13 +125,13 @@ export function Products() {
 
                 <div className="mt-auto pt-2">
                   <Button
-                    href={siteConfig.cta.secondary.href}
+                    href={whatsappLink(`Olá! Quero conhecer o ${name}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="outline"
                     size="md"
                   >
-                    Quero conhecer
+                    Quero conhecer o {name}
                   </Button>
                 </div>
               </div>

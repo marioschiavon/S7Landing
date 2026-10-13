@@ -5,9 +5,15 @@ interface LogoProps {
   className?: string;
   iconOnly?: boolean;
   size?: "sm" | "md";
+  priority?: boolean;
 }
 
-export function Logo({ className, iconOnly = false, size = "md" }: LogoProps) {
+export function Logo({
+  className,
+  iconOnly = false,
+  size = "md",
+  priority = true,
+}: LogoProps) {
   const tile = size === "sm" ? "h-7" : "h-8";
 
   return (
@@ -17,7 +23,7 @@ export function Logo({ className, iconOnly = false, size = "md" }: LogoProps) {
         alt="S7"
         width={339}
         height={378}
-        priority
+        priority={priority}
         className={cn("w-auto shrink-0", tile)}
       />
       {!iconOnly && (

@@ -22,9 +22,18 @@ export function Navbar() {
 
   useEffect(() => {
     if (!open) return;
-    const onResize = () => setOpen(false);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    const close = () => setOpen(false);
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("resize", close);
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("resize", close);
+      window.removeEventListener("keydown", onKeyDown);
+    };
   }, [open]);
 
   return (
@@ -55,14 +64,14 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Button
-            href={siteConfig.cta.secondary.href}
+            href={siteConfig.cta.contact.href}
             target="_blank"
             rel="noopener noreferrer"
             variant="outline"
             size="md"
             icon={false}
           >
-            {siteConfig.cta.secondary.label}
+            {siteConfig.cta.contact.label}
           </Button>
         </div>
 
@@ -98,7 +107,7 @@ export function Navbar() {
                 </a>
               ))}
               <Button
-                href={siteConfig.cta.secondary.href}
+                href={siteConfig.cta.contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"
@@ -106,7 +115,7 @@ export function Navbar() {
                 icon={false}
                 onClick={() => setOpen(false)}
               >
-                {siteConfig.cta.secondary.label}
+                {siteConfig.cta.contact.label}
               </Button>
               <SocialLinks
                 className="mt-5 justify-center"

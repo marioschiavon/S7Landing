@@ -29,9 +29,26 @@ export function Cta() {
                 Conte sua ideia. Nós cuidamos da estratégia, do produto e da
                 execução.
               </p>
-              <Button href={siteConfig.cta.final.href} variant="gradient" size="lg">
-                {siteConfig.cta.final.label}
-              </Button>
+              <div className="flex flex-col items-center gap-4">
+                <Button
+                  href={siteConfig.cta.final.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="gradient"
+                  size="lg"
+                >
+                  {siteConfig.cta.final.label}
+                </Button>
+                <p className="text-sm text-white/55">
+                  Prefere e-mail?{" "}
+                  <a
+                    href={`mailto:${siteConfig.contactEmail}`}
+                    className="text-white/80 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+                  >
+                    {siteConfig.contactEmail}
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </Reveal>

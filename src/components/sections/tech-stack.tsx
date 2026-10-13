@@ -27,7 +27,7 @@ export function TechStack() {
         <Stagger className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           {technologies.map(({ name, mono }) => (
             <StaggerItem key={name}>
-              <div className="group flex flex-col items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue/25 hover:bg-white/[0.04]">
+              <div className="group flex flex-col items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition-[transform,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-accent-blue/25 hover:bg-white/[0.04]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 font-mono text-sm font-semibold text-white/60 transition-colors duration-300 group-hover:border-accent-blue/40 group-hover:text-accent-blue">
                   {mono}
                 </div>

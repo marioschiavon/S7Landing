@@ -6,7 +6,7 @@ type Variant = "primary" | "gradient" | "outline" | "ghost";
 type Size = "md" | "lg";
 
 const baseClasses =
-  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-base-black";
+  "group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold transition-[transform,box-shadow,background-color,border-color,filter] duration-300 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-base-black";
 
 const variantClasses: Record<Variant, string> = {
   primary:
