@@ -9,45 +9,47 @@ export function Cta() {
     <section id="contato" className="relative py-28 md:py-36">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-base-dark/60 px-8 py-20 text-center md:px-16 md:py-28">
-            <GlowOrb
-              variant="blue"
-              className="-left-20 -top-20 h-72 w-72 opacity-40"
-            />
-            <GlowOrb
-              variant="green"
-              className="-bottom-24 -right-20 h-80 w-80 opacity-35"
-            />
-            <div className="absolute inset-0 bg-dot-grid opacity-20" />
+          <div className="bezel-shell rounded-[2.75rem] p-2">
+            <div className="bezel-core relative overflow-hidden rounded-[calc(2.75rem-0.5rem)] px-6 py-20 text-center md:px-16 md:py-32">
+              <GlowOrb
+                variant="blue"
+                className="-left-20 -top-20 h-72 w-72 opacity-40"
+              />
+              <GlowOrb
+                variant="green"
+                className="-bottom-24 -right-20 h-80 w-80 opacity-35"
+              />
+              <div className="absolute inset-0 bg-dot-grid opacity-20" />
 
-            <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-8">
-              <h2 className="text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl">
-                Vamos construir algo{" "}
-                <span className="text-gradient-brand">extraordinário?</span>
-              </h2>
-              <p className="text-lg text-white/55 md:text-xl">
-                Conte sua ideia. Nós cuidamos da estratégia, do produto e da
-                execução.
-              </p>
-              <div className="flex flex-col items-center gap-4">
-                <Button
-                  href={siteConfig.cta.final.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="gradient"
-                  size="lg"
-                >
-                  {siteConfig.cta.final.label}
-                </Button>
-                <p className="text-sm text-white/55">
-                  Prefere e-mail?{" "}
-                  <a
-                    href={`mailto:${siteConfig.contactEmail}`}
-                    className="text-white/80 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
-                  >
-                    {siteConfig.contactEmail}
-                  </a>
+              <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-8">
+                <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-5xl md:text-7xl">
+                  Vamos construir algo{" "}
+                  <span className="text-gradient-brand">extraordinário?</span>
+                </h2>
+                <p className="text-lg text-white/55 md:text-xl">
+                  Conte sua ideia. Nós cuidamos da estratégia, do produto e da
+                  execução.
                 </p>
+                <div className="flex flex-col items-center gap-4">
+                  <Button
+                    href={siteConfig.cta.final.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="gradient"
+                    size="lg"
+                  >
+                    {siteConfig.cta.final.label}
+                  </Button>
+                  <p className="text-sm text-white/55">
+                    Prefere e-mail?{" "}
+                    <a
+                      href={`mailto:${siteConfig.contactEmail}`}
+                      className="text-white/80 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+                    >
+                      {siteConfig.contactEmail}
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Compass, Rocket, Target, Workflow, Wrench, Zap } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -37,8 +41,15 @@ const steps = [
 ];
 
 export function Process() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: trackRef,
+    offset: ["start 85%", "end 55%"],
+  });
+  const progress = useSpring(scrollYProgress, { stiffness: 90, damping: 30 });
+
   return (
-    <section id="processo" className="relative py-28 md:py-36">
+    <section id="processo" className="relative py-28 md:py-40">
       <Container className="flex flex-col gap-20">
         <SectionHeading
           eyebrow="Nosso processo"
@@ -46,33 +57,46 @@ export function Process() {
           description="Um processo enxuto e iterativo, pensado para colocar valor real em produção rapidamente."
         />
 
-        <Stagger className="relative flex flex-col gap-10 md:flex-row md:items-start md:justify-between md:gap-4">
-          <div className="absolute left-[17px] top-1 h-[calc(100%-2rem)] w-px bg-white/10 md:left-0 md:right-0 md:top-[22px] md:h-px md:w-full" />
+        <div ref={trackRef} className="relative">
+          {/* Base track + scroll-driven fill (vertical on mobile, horizontal on desktop) */}
+          <div className="absolute left-[21px] top-2 h-[calc(100%-2.5rem)] w-px bg-white/10 md:left-0 md:right-0 md:top-[22px] md:h-px md:w-full" />
+          <motion.div
+            style={{ scaleY: progress }}
+            className="absolute left-[21px] top-2 h-[calc(100%-2.5rem)] w-px origin-top bg-gradient-to-b from-accent-blue to-accent-green md:hidden"
+          />
+          <motion.div
+            style={{ scaleX: progress }}
+            className="absolute left-0 right-0 top-[22px] hidden h-px origin-left bg-gradient-brand md:block"
+          />
 
-          {steps.map(({ number, icon: Icon, title, description }) => (
-            <StaggerItem
-              key={number}
-              className="relative flex flex-1 items-start gap-4 md:flex-col md:items-center md:gap-4 md:text-center"
-            >
-              <div className="relative z-10 flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-white/15 bg-base-black">
-                <Icon size={15} className="text-accent-blue" />
-              </div>
-              <div className="flex flex-col gap-1.5 md:max-w-[11rem]">
-                <span className="font-mono text-xs text-accent-blue">
-                  {number}
-                </span>
-                <h3 className="text-lg font-semibold text-white">{title}</h3>
-                <p className="text-sm leading-relaxed text-white/50">
-                  {description}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+          <Stagger className="relative flex flex-col gap-12 md:flex-row md:items-start md:justify-between md:gap-4">
+            {steps.map(({ number, icon: Icon, title, description }) => (
+              <StaggerItem
+                key={number}
+                className="relative flex flex-1 items-start gap-5 md:flex-col md:items-center md:gap-5 md:text-center"
+              >
+                <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-base-black shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                  <Icon size={17} strokeWidth={1.5} className="text-accent-blue" />
+                </div>
+                <div className="flex flex-col gap-1.5 md:max-w-[11rem]">
+                  <span className="font-mono text-xs text-accent-blue">
+                    {number}
+                  </span>
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-white">
+                    {title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-white/55">
+                    {description}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
 
         <div className="flex justify-center">
           <span className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm text-white/70">
-            <Zap size={14} className="text-accent-blue" />
+            <Zap size={14} strokeWidth={1.75} className="text-accent-blue" />
             Do briefing ao primeiro entregável: poucas semanas, não meses.
           </span>
         </div>

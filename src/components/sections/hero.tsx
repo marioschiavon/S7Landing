@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100dvh] items-center overflow-hidden pt-28 pb-20"
+      className="relative flex min-h-[100dvh] items-center overflow-hidden pt-32 pb-24"
     >
       <div className="absolute inset-0 bg-dot-grid mask-fade-bottom opacity-40" />
       <GlowOrb variant="blue" className="-left-40 top-10 h-[28rem] w-[28rem] opacity-30" />
@@ -33,7 +33,7 @@ export function Hero() {
 
           <h1
             style={delay(0.08)}
-            className="animate-fade-up text-balance text-5xl font-bold leading-[1.08] tracking-tight text-white md:text-7xl"
+            className="animate-fade-up text-balance text-5xl font-semibold leading-[1.0] tracking-[-0.045em] text-white sm:text-6xl md:text-7xl lg:text-[5.75rem]"
           >
             Construímos software que{" "}
             <span className="text-gradient-brand">transforma negócios.</span>

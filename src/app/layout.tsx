@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { SpotlightTracker } from "@/components/ui/spotlight-tracker";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -100,6 +101,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SpotlightTracker />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { BrowserFrame } from "@/components/ui/browser-frame";
 import { Button } from "@/components/ui/button";
+import { Bezel } from "@/components/ui/bezel";
 import { whatsappLink } from "@/lib/site-config";
 
 function Hook7Mockup() {
@@ -87,16 +88,16 @@ export function Products() {
           description="Não somos apenas uma fábrica de software. Também criamos e operamos nossas próprias plataformas SaaS."
         />
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {products.map(({ icon: Icon, name, description, features, Mockup }, i) => (
-            <Reveal key={name} delay={i * 0.1}>
-              <div className="card-surface group relative flex h-full flex-col gap-8 overflow-hidden rounded-3xl p-8 transition-colors duration-500 hover:border-white/20 md:p-10">
+            <Reveal key={name} delay={i * 0.1} className="h-full">
+              <Bezel className="hover:border-white/15" innerClassName="flex flex-col gap-8 p-7 md:p-10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-brand shadow-glow-blue">
-                      <Icon className="h-5 w-5 text-white" />
+                      <Icon strokeWidth={1.75} className="h-5 w-5 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-white">{name}</h3>
+                    <h3 className="text-3xl font-semibold tracking-[-0.03em] text-white md:text-4xl">{name}</h3>
                   </div>
                   <span className="hidden rounded-full border border-white/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wide text-white/55 sm:inline-block">
                     Produto S7
@@ -113,11 +114,9 @@ export function Products() {
                   {features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-center gap-3 text-sm text-white/65"
+                      className="flex items-center gap-3 border-t border-white/[0.06] pt-3 text-sm text-white/70"
                     >
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/8">
-                        <Check size={11} className="text-accent-blue" />
-                      </span>
+                      <Check size={14} strokeWidth={1.75} className="shrink-0 text-accent-green" />
                       {feature}
                     </li>
                   ))}
@@ -134,7 +133,7 @@ export function Products() {
                     Quero conhecer o {name}
                   </Button>
                 </div>
-              </div>
+              </Bezel>
             </Reveal>
           ))}
         </div>
